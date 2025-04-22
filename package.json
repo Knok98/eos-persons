@@ -25,6 +25,7 @@
     "@nestjs/platform-express": "^11.0.20",
     "csv-writer": "^1.6.0",
     "fast-xml-parser": "^5.2.0",
+    "ftp": "^0.3.10",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
     "xml2js": "^0.6.2"
