@@ -130,7 +130,7 @@ export class XmlToCsvService {
           iosKancelar: person.location?.room,
         };
 
-        console.log('Extracted row:', row);
+        //console.log('Extracted row:', row);
 
         return row;
       });
