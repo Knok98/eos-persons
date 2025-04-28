@@ -5,7 +5,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as stream from 'stream';
 import * as util from 'util';
-import { IXmlToCsvService } from './xml-to-csv.interface'
+import { IXmlToCsvService, OrgUnitDetails, OrgUnit, Person, ContactValue, Record } from './xml-to-csv.interface';
 
 const pipeline = util.promisify(stream.pipeline);
 
@@ -58,10 +58,12 @@ export class XmlToCsvService implements IXmlToCsvService {
       ],
     });
 
-    const getContactValue = (contactValues, id) => {
+    
+
+    const getContactValue = (contactValues: ContactValue[], id: string | number): string | undefined => {
       const contact = contactValues.find(cv => {
-        const identifier = cv['contact-type-identifier'];
-        return String(Array.isArray(identifier) ? identifier[0] : identifier) === String(id);
+      const identifier = cv['contact-type-identifier'];
+      return String(Array.isArray(identifier) ? identifier[0] : identifier) === String(id);
       });
       if (!contact) return undefined;
       const content = contact.content;
@@ -70,70 +72,76 @@ export class XmlToCsvService implements IXmlToCsvService {
 
     const orgUnitCache = new Map();
 
-    const getOrgUnitDetails = (personIdentifier) => {
+    
+
+    
+
+    const getOrgUnitDetails = (personIdentifier: string): OrgUnitDetails => {
       if (orgUnitCache.has(personIdentifier)) {
-        return orgUnitCache.get(personIdentifier);
+      return orgUnitCache.get(personIdentifier) as OrgUnitDetails;
       }
-      for (const unit of orgUnits) {
-        const orgRoles = unit['org-roles'] && unit['org-roles']['org-role'];
-        if (!orgRoles) continue;
-        const rolesArray = Array.isArray(orgRoles) ? orgRoles : [orgRoles];
-        for (const role of rolesArray) {
-          const assignments = role['person-assignments'] && role['person-assignments']['person-role-assignment'];
-          if (!assignments) continue;
-          const assignmentsArray = Array.isArray(assignments) ? assignments : [assignments];
-          for (const assignment of assignmentsArray) {
-            if (assignment['person-identifier'] === personIdentifier) {
-              const details = { iosPozice: unit.name, iosFunkce: role.name };
-              orgUnitCache.set(personIdentifier, details);
-              return details;
-            }
-          }
+      for (const unit of orgUnits as OrgUnit[]) {
+      const orgRoles = unit['org-roles'] && unit['org-roles']['org-role'];
+      if (!orgRoles) continue;
+      const rolesArray = Array.isArray(orgRoles) ? orgRoles : [orgRoles];
+      for (const role of rolesArray) {
+        const assignments = role['person-assignments'] && role['person-assignments']['person-role-assignment'];
+        if (!assignments) continue;
+        const assignmentsArray = Array.isArray(assignments) ? assignments : [assignments];
+        for (const assignment of assignmentsArray) {
+        if (assignment['person-identifier'] === personIdentifier) {
+          const details: OrgUnitDetails = { iosPozice: unit.name, iosFunkce: role.name };
+          orgUnitCache.set(personIdentifier, details);
+          return details;
         }
+        }
+      }
       }
       return { iosPozice: undefined, iosFunkce: undefined };
     };
 
-    const records = persons
+    
+
+    const records: Record[] = (persons as Person[])
       .filter(person => {
-        const isDisabled = String(person.disabled) === 'false';
-        const { iosPozice, iosFunkce } = getOrgUnitDetails(person.identifier);
-        const hasValidRole = iosFunkce !== 'referent - dohoda' && iosFunkce !== 'referent/ka - dohoda' && iosFunkce !== 'Neuvolnění zastupitelé';
-        return isDisabled && hasValidRole;
+      const isDisabled = String(person.disabled) === 'false';
+      const { iosPozice, iosFunkce } = getOrgUnitDetails(person.identifier);
+      const hasValidRole = iosFunkce !== 'referent - dohoda' && iosFunkce !== 'referent/ka - dohoda' && iosFunkce !== 'Neuvolnění zastupitelé';
+      return isDisabled && hasValidRole;
       })
       .map(person => {
-        const contactValues = (() => {
-          const cv = person['contact-values'] || {};
-          if (Array.isArray(cv['contact-value'])) {
-            return cv['contact-value'];
-          } else if (cv['contact-value']) {
-            return [cv['contact-value']];
-          }
-          return [];
-        })();
+      const contactValues: ContactValue[] = (() => {
+        const cv = person['contact-values'] || {};
+        if (Array.isArray(cv['contact-value'])) {
+        return cv['contact-value'];
+        } else if (cv['contact-value']) {
+        return [cv['contact-value']];
+        }
+        return [];
+      })();
 
-        const iosLinka1 = getContactValue(contactValues, '202');
-        const iosMobil = getContactValue(contactValues, '602');
-        const { iosPozice, iosFunkce } = getOrgUnitDetails(person.identifier);
+      const iosLinka1 = getContactValue(contactValues, '202');
+      const iosMobil = getContactValue(contactValues, '602');
+      const { iosPozice, iosFunkce } = getOrgUnitDetails(person.identifier);
 
-        const row = {
-          iosOsc: person['personal-number'],
-          iosTitul_pred: person['degree-before'],
-          iosPrijmeni: person.surname1,
-          iosJmeno: person.firstname1,
-          iosTitul_za: person['degree-after'],
-          iosLinka1: iosLinka1 ? `267093${iosLinka1}` : undefined,
-          iosEmail: person.email,
-          iosMobil: iosMobil,
-          iosPozice: iosPozice,
-          iosFunkce: iosFunkce,
-          iosBudova: person.location?.building,
-          iosKancelar: person.location?.room,
-        };
+      const row: Record = {
+        iosOsc: person['personal-number'],
+        iosTitul_pred: person['degree-before'],
+        iosPrijmeni: person.surname1,
+        iosJmeno: person.firstname1,
+        iosTitul_za: person['degree-after'],
+        iosLinka1: iosLinka1 ? `267093${iosLinka1}` : undefined,
+        iosEmail: person.email,
+        iosMobil: iosMobil,
+        iosPozice: iosPozice,
+        iosFunkce: iosFunkce,
+        iosBudova: person.location?.building,
+        iosKancelar: person.location?.room,
+      };
 
-        //console.log('Extracted row:', row);
+      //console.log('Extracted row:', row);
 
-        return row;
+      return row;
       });
 
     console.log(`Writing ${records.length} records to CSV file.`);
