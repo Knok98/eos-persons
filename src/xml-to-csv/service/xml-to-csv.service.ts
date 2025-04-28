@@ -5,11 +5,12 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as stream from 'stream';
 import * as util from 'util';
+import { IXmlToCsvService } from './xml-to-csv.interface'
 
 const pipeline = util.promisify(stream.pipeline);
 
 @Injectable()
-export class XmlToCsvService {
+export class XmlToCsvService implements IXmlToCsvService {
   async convertXmlToCsv(): Promise<void> {
     const xmlFilePath = path.join(process.cwd(), 'public', 'data.xml');
     const csvFilePath = path.join(process.cwd(), 'public', 'persons.csv');

@@ -1,7 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
-import { XmlToCsvService } from './xml-to-csv.service';
+import { XmlToCsvService } from './service/xml-to-csv.service';
 
-@Controller('eospersons')
+@Controller('xml2csv')
 // @Controller('xml-to-csv')
 export class XmlToCsvController {
   constructor(private readonly xmlToCsvService: XmlToCsvService) {}

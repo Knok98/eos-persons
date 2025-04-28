@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
+import { ScheduleModule } from '@nestjs/schedule';
 import { FtpConnectController } from './ftp-connect.controller';
-import { FtpConnectService } from './ftp-connect.service';
+import { FtpConnectService } from './services/ftp-connect.service';
+import { FtpCronService } from './services/ftp-connect.cron.service';
 
 @Module({
-  providers: [FtpConnectService],
-  controllers: [FtpConnectController]
+  imports: [ScheduleModule.forRoot()],
+  controllers: [FtpConnectController],
+  providers: [FtpConnectService, FtpCronService],
 })
 export class FtpConnectModule {}
