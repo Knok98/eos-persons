@@ -6,8 +6,8 @@ import { XmlToCsvService } from './xml-to-csv.service';
 export class FtpCronService {
   constructor(private readonly xmlToCsvService: XmlToCsvService) {}
 
-  //@Cron('05 1 * * *') 
-   @Cron('05 * * * *') // Runs every 10 minutes for testing purposes
+  @Cron('05 1 * * *') 
+   //@Cron('05 * * * *') // Runs every 10 minutes for testing purposes
   async handleCron() {
     await this.xmlToCsvService.convertXmlToCsv();
     
