@@ -226,7 +226,7 @@ iosOsc,iosTitul_pred,iosPrijmeni,iosJmeno,iosTitul_za,iosLinka1,iosEmail,iosMobi
 2859,Ing.,Strachotová,Lenka,,267093380,lenka.strachotova@praha10.cz,724787420,Oddělení veřejné podpory,koordinátor/ka a metodik/čka,V,410
 2860,,Valešová,Tereza,DiS.,267093426,tereza.valesova@praha10.cz,605876760,Oddělení městské zeleně a čistoty,referent/ka údržby městské zeleně,K,501
 2863,,Pobuda,Mikuláš,,267093473,mikulas.pobuda@praha10.cz,774643435,Uvolněný člen RMČ_C,uvolněný člen RMČ,K,814
-2868,,Adamcová,Ilona,,267093400,ilona.adamcova@praha10.cz,,Referát stížností,referent/ka,V,706
+2868,,Adamcová,Ilona,,267093400,ilona.adamcova@praha10.cz,,Oddělení stížností a svobodného přístupu k informacím,referent/ka,V,706
 2871,,Andonova,Ilona,,267093136,ilona.andonova@praha10.cz,,Oddělení výkonu vlastnických práv,referent/ka,K,607
 2884,,Vajnerová,Hana,,267093501,hana.vajnerova@praha10.cz,,Oddělení provozně - ekonomické,vedoucí oddělení provozně - ekonomického,V,205
 2894,Ing.,Hypšová,Pavlína,,267093140,pavlina.hypsova@praha10.cz,605263894,Referát práce s rodinou a dětmi,sociální pracovnice,V,307
@@ -276,6 +276,7 @@ iosOsc,iosTitul_pred,iosPrijmeni,iosJmeno,iosTitul_za,iosLinka1,iosEmail,iosMobi
 3073,,Mücková,Zuzana,,267093502,zuzana.muckova@praha10.cz,,Referát bytů,referent/ka,V,507
 3074,,Krejčová,Lucie,,267093695,lucie.krejcova@praha10.cz,,Kancelář hlavního architekta,administrativní a spisový pracovník/pracovnice,K,611
 3077,,Barešová,Helena,,267093233,helena.baresova@praha10.cz,,Referát pohledávek,referent/ka,V,401
+3078,MgA.,Glinská,Patrícia,,267093396,patricia.glinska@praha10.cz,776378330,Kancelář tajemníka,Nezařazen/a,V,413
 3082,Bc.,Vykoukal,Tomáš,,267093275,tomas.vykoukal@praha10.cz,,Referát základních registrů,referent/ka,K,317
 2381,,Bosáková,Sandra,,267093231,sandra.bosakova@praha10.cz,,Oddělení sekretariátu starosty,asistent/ka členů RMČ,K,816
 3086,,Holečková,Monika,,267093823,monika.holeckova@praha10.cz,,Referát právní,referent/ka - administrace dopravní přestupky,K,416
@@ -330,7 +331,7 @@ iosOsc,iosTitul_pred,iosPrijmeni,iosJmeno,iosTitul_za,iosLinka1,iosEmail,iosMobi
 3220,,Hunanyan,Monika,,267093579,monika.hunanyan@praha10.cz,,Oddělení sekretariátu starosty,asistent/ka členů RMČ,K,803
 3218,Bc.,Kolín,Martin,,267093465,martin.kolin@praha10.cz,,Referát ochrany přírody a krajiny,referent/ka ochrany přírody a krajiny,K,522
 3250,,Kroupová,Stanislava,,267093143,stanislava.kroupova@praha10.cz,,Oddělení personální,personalista/ka,K,712
-3192,Mgr.,Kohoutová,Kateřina,,267093603,katerina.kohoutova@praha10.cz,,Odbor kultury a projektů,projektová manažerka pro oblast kultury,V,412
+3192,Mgr.,Kohoutová,Kateřina,,267093603,katerina.kohoutova@praha10.cz,,Odbor kultury a projektů,projektová manažerka pro oblast kultury,V,415
 3251,,Čiháková,Simona,,267093574,simona.cihakova@praha10.cz,,Oddělení sekretariátu starosty,asistent/ka členů RMČ,K,829
 3245,,Lhotková,Renata,,267093209,renata.lhotkova@praha10.cz,736476056,Oddělení provozně - technické,technický/á referent/ka,V,201
 3247,,Majtner,Vít,,267093325,vit.majtner@praha10.cz,,Oddělení školských zařízení,referent/ka,V,517
@@ -356,7 +357,7 @@ iosOsc,iosTitul_pred,iosPrijmeni,iosJmeno,iosTitul_za,iosLinka1,iosEmail,iosMobi
 3290,,Riegerová,Ladislava,,267093284,ladislava.riegerova@praha10.cz,,"Referát daní, kontroly a SF",účetní kontroly SF,V,601
 3297,,Balková,Daniela,,267093576,daniela.balkova@praha10.cz,,"Oddělení jednoduchých staveb, kontrola staveb",referent/ka - kontrola staveb,K,420
 3300,Mgr.,Zdvořáková,Júlia,,267093282,julia.zdvorakova@praha10.cz,604259855,Oddělení sekretariátu starosty,asistent/ka starosty,K,825
-3303,,Persein,Robert,,267093699,robert.persein@praha10.cz,733633690,Odbor kultury a projektů,pověřen zastupováním vedoucí/ho odboru kultury a projektů,V,415
+3303,,Persein,Robert,,267093699,robert.persein@praha10.cz,733633690,Odbor kultury a projektů,pověřen zastupováním vedoucí/ho odboru kultury a projektů,V,413
 3302,Ing.,Puš,Milan,,267093375,milan.pus@praha10.cz,,Oddělení rozpočtu,rozpočtář/ka a finanční referent/ka tvorby a financování,V,613
 3301,Bc.,Fialová,Daniela,,267093523,daniela.fialova@praha10.cz,,Referát sociální práce,kurátor/ka pro dospělé,V,303
 3208,Mgr.,Čásenský,Martin,,267093128,martin.casensky@praha10.cz,,Místostarostka_B,místostarosta,K,813
@@ -390,3 +391,7 @@ iosOsc,iosTitul_pred,iosPrijmeni,iosJmeno,iosTitul_za,iosLinka1,iosEmail,iosMobi
 3366,,Kořínek,Jan,,267093237,jan.korinek@praha10.cz,,Referát bytů,referent/ka,V,508
 3368,Bc.,Deliopulos,David,,,david.deliopulos@praha10.cz,,Referát právní,právník/právnička - dopravní přestupky,,
 3369,,Středa,Vojtěch,,,vojtech.streda@praha10.cz,,Odbor informatiky,IT konzultant/ka,,
+3367,Mgr.,Hrabovská,Adéla,,,adela.hrabovska@praha10.cz,,Kancelář starosty,protidrogový/vá koordinátor/ka,K,717
+3370,Mgr.,Simandl,Tomáš,,,tomas.simandl@praha10.cz,,Oddělení právních činností a VZ,referent/ka - právník/čka,,
+3371,,Červenková,Mariana,,,mariana.cervenkova@praha10.cz,,Oddělení místních příjmů,referent/ka pro správu poplatků ze vstupného,V,605
+3372,,Adamová,Andrea,,,andrea.adamova@praha10.cz,,"Oddělení matrik,státního občanství a vnitřní správy",matrikář/ka - státní občanství,,

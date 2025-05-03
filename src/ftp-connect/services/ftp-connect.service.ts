@@ -10,6 +10,7 @@ export class FtpConnectService implements IFtpConnectService {
 
   constructor() {
     this.client = new ftp.Client();
+    this.client.ftp.verbose = true; // Enable verbose logging
   }
 
   async connect() {
@@ -45,14 +46,25 @@ export class FtpConnectService implements IFtpConnectService {
   }
 
   async disconnect() {
-    this.client.close();
-    this.logger.log('Disconnected from FTP server');
+    try {
+      this.client.close();
+      this.logger.log('Disconnected from FTP server');
+    } catch (error) {
+      this.logger.error('Failed to disconnect from FTP server', error);
+      throw error;
+    }
   }
 
   async runTask() {
-    await this.connect();
-    await this.uploadFile();
-    await this.disconnect();
-    this.logger.log('FTP task completed');
+    try {
+      await this.connect();
+      await this.uploadFile();
+    } catch (error) {
+      this.logger.error('Error during FTP task', error);
+      throw error;
+    } finally {
+      await this.disconnect();
+      this.logger.log('FTP task completed');
+    }
   }
 }
