@@ -1,5 +1,5 @@
-export interface IXmlToCsvService {
-    convertXmlToCsv(): Promise<void>;
+export interface IConvertService {
+    convert(): Promise<void>;
   }
   
 

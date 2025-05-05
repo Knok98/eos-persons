@@ -1,15 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { XmlToCsvController } from './xml-to-csv.controller';
+import { ConvertController } from './convert.controller';
 
-describe('XmlToCsvController', () => {
-  let controller: XmlToCsvController;
+describe('ConvertController', () => {
+  let controller: ConvertController;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      controllers: [XmlToCsvController],
+      controllers: [ConvertController],
     }).compile();
 
-    controller = module.get<XmlToCsvController>(XmlToCsvController);
+    controller = module.get<ConvertController>(ConvertController);
   });
 
   it('should be defined', () => {

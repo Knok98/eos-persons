@@ -5,13 +5,13 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as stream from 'stream';
 import * as util from 'util';
-import { IXmlToCsvService, OrgUnitDetails, OrgUnit, Person, ContactValue, Record } from './xml-to-csv.interface';
+import { IConvertService, OrgUnitDetails, OrgUnit, Person, ContactValue, Record } from '../convert.interface';
 
 const pipeline = util.promisify(stream.pipeline);
 
 @Injectable()
-export class XmlToCsvService implements IXmlToCsvService {
-  async convertXmlToCsv(): Promise<void> {
+export class XmlToCsvService implements IConvertService {
+  async convert(): Promise<void> {
     const xmlFilePath = path.join(process.cwd(), 'public', 'data.xml');
     const csvFilePath = path.join(process.cwd(), 'public', 'persons.csv');
 
@@ -138,8 +138,6 @@ export class XmlToCsvService implements IXmlToCsvService {
         iosBudova: person.location?.building,
         iosKancelar: person.location?.room,
       };
-
-      //console.log('Extracted row:', row);
 
       return row;
       });

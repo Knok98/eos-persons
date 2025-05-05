@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { FtpConnectController } from './ftp-connect.controller';
+import { FtpConnectController } from './upload.controller';
 
 describe('FtpConnectController', () => {
   let controller: FtpConnectController;

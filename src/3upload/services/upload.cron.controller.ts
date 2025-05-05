@@ -1,13 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { Cron } from '@nestjs/schedule';
-import { FtpConnectService } from './ftp-connect.service';
+import { FtpConnectService } from './FTP/ftp-connect.service';
 
 @Injectable()
-export class FtpCronService {
+export class UploadCronService {
   constructor(private readonly ftpConnectService: FtpConnectService) {}
 
- @Cron('10 1 * * *') // Runs every day at 01:10 AM
-  //@Cron('7 * * * *') // Runs every 10 minutes for testing purposes
+ @Cron('25 23 * * *')
   async handleCron() {
     await this.ftpConnectService.connect();
     await this.ftpConnectService.uploadFile();

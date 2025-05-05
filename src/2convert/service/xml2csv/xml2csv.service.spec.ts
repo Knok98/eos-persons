@@ -1,15 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { FtpConnectService } from './SAMBA-connect.service';
+import { XmlToCsvService } from './xml2csv.service';
 
-describe('FtpConnectService', () => {
-  let service: FtpConnectService;
+describe('XmlToCsvService', () => {
+  let service: XmlToCsvService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [FtpConnectService],
+      providers: [XmlToCsvService],
     }).compile();
 
-    service = module.get<FtpConnectService>(FtpConnectService);
+    service = module.get<XmlToCsvService>(XmlToCsvService);
   });
 
   it('should be defined', () => {

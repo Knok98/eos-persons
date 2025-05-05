@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
-import { FtpConnectModule } from './ftp-connect/ftp-connect.module';
-import { XmlToCsvModule } from './xml-to-csv/xml-to-csv.module';
+import { UploadModule } from './3upload/upload.module';
+import { ConvertModule} from './2convert/convert.module';
+import { FileDownloadModule } from './1download/download.module';
 
 @Module({
-  imports: [FtpConnectModule, XmlToCsvModule],
+  imports: [UploadModule, ConvertModule, FileDownloadModule],
 })
 export class AppModule {}
