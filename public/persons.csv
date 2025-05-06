@@ -118,7 +118,6 @@ iosOsc,iosTitul_pred,iosPrijmeni,iosJmeno,iosTitul_za,iosLinka1,iosEmail,iosMobi
 23,Bc.,Zákorová,Linda,,267093226,linda.zakorova@praha10.cz,736499354,Oddělení sociální práce,vedoucí oddělení sociální práce,V,318
 1600,,Zemanová,Monika,,267093675,monika.zemanova@praha10.cz,,Odbor bytů a nebytových prostor,asistent/ka,V,502a
 1293,,Žejdlová,Jindra,,267093615,jindra.zejdlova@praha10.cz,,Oddělení evidence podnikatelů,referent/ka,K,304
-272,,Železná,Zuzana,,267093341,zuzana.zelezna@praha10.cz,,Oddělení místních příjmů,referent/ka pro správu poplatků ze vstupného,V,605
 1525,,Žiláková,Šárka,,267093495,sarka.zilakova@praha10.cz,,Oddělení prodeje nemovitého majetku a privatizace,referent/ka,K,603
 2325,Ing.,Neuman,Marek,,267093606,marek.neuman@praha10.cz,736499381,Oddělení aplikací,referent/ka aplikací,K,313
 2324,Ing.,Kotková,Markéta,,267093606,marketa.kotkova@praha10.cz,736499371,Oddělení aplikací,vedoucí oddělení aplikací,K,313
@@ -333,7 +332,7 @@ iosOsc,iosTitul_pred,iosPrijmeni,iosJmeno,iosTitul_za,iosLinka1,iosEmail,iosMobi
 3250,,Kroupová,Stanislava,,267093143,stanislava.kroupova@praha10.cz,,Oddělení personální,personalista/ka,K,712
 3192,Mgr.,Kohoutová,Kateřina,,267093603,katerina.kohoutova@praha10.cz,,Odbor kultury a projektů,projektová manažerka pro oblast kultury,V,415
 3251,,Čiháková,Simona,,267093574,simona.cihakova@praha10.cz,,Oddělení sekretariátu starosty,asistent/ka členů RMČ,K,829
-3245,,Lhotková,Renata,,267093209,renata.lhotkova@praha10.cz,736476056,Oddělení provozně - technické,technický/á referent/ka,V,201
+3245,,Lhotková,Renata,,267093209,renata.lhotkova@praha10.cz,736476056,Oddělení provozně - technické,vedoucí oddělení provozně - technického,V,201
 3247,,Majtner,Vít,,267093325,vit.majtner@praha10.cz,,Oddělení školských zařízení,referent/ka,V,517
 3261,,Kalfusová,Jana,,267093411,jana.kalfusova@praha10.cz,,Referát mzdové účtárny,vedoucí referátu mzdové účtárny,K,710
 3016,JUDr.,Řeháková,Milena,"LL.M., MBA",267093272,milena.rehakova@praha10.cz,,Odbor stavební,"právník/čka - odvolání,veřejnoprávní smlouvy,přestupky, komplexní právní činnost",K,412
@@ -392,6 +391,6 @@ iosOsc,iosTitul_pred,iosPrijmeni,iosJmeno,iosTitul_za,iosLinka1,iosEmail,iosMobi
 3368,Bc.,Deliopulos,David,,,david.deliopulos@praha10.cz,,Referát právní,právník/právnička - dopravní přestupky,,
 3369,,Středa,Vojtěch,,,vojtech.streda@praha10.cz,,Odbor informatiky,IT konzultant/ka,,
 3367,Mgr.,Hrabovská,Adéla,,,adela.hrabovska@praha10.cz,,Kancelář starosty,protidrogový/vá koordinátor/ka,K,717
-3370,Mgr.,Simandl,Tomáš,,,tomas.simandl@praha10.cz,,Oddělení právních činností a VZ,referent/ka - právník/čka,,
+3370,Mgr.,Simandl,Tomáš,,267093255,tomas.simandl@praha10.cz,,Oddělení právních činností a VZ,referent/ka - právník/čka,V,506
 3371,,Červenková,Mariana,,,mariana.cervenkova@praha10.cz,,Oddělení místních příjmů,referent/ka pro správu poplatků ze vstupného,V,605
-3372,,Adamová,Andrea,,,andrea.adamova@praha10.cz,,"Oddělení matrik,státního občanství a vnitřní správy",matrikář/ka - státní občanství,,
+3372,,Adamová,Andrea,,267093564,andrea.adamova@praha10.cz,,"Oddělení matrik,státního občanství a vnitřní správy",matrikář/ka - státní občanství,K,221
