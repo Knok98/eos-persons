@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Cron } from '@nestjs/schedule';
-import { SrvSMB02 } from './SAMBA/SAMBA-connect.service';
+import { SrvSMB02 } from './NFS/nfs-connect.service';
 
 @Injectable()
 export class FileDownloadCronService {
