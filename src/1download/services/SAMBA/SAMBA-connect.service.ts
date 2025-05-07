@@ -5,7 +5,7 @@ import { IFileDownloadService } from '../download.interface';
 const SMB2 = require('smb2');
 
 @Injectable()
-export class ProxioConnectService implements IFileDownloadService {
+export class SrvSMB02 implements IFileDownloadService {
   async downloadFile(): Promise<void> {
     const smbFilePath = 'integrace-eos-web/data.xml';
     const filePath = path.join(process.cwd(), 'public', 'data.xml');

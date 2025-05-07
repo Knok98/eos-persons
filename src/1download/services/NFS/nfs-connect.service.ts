@@ -7,7 +7,7 @@ import { promisify } from 'util';
 const execAsync = promisify(exec);
 
 @Injectable()
-export class ProxioConnectService {
+export class SrvSMB02 {
   private readonly nfsMountPoint = '/mnt/integrace_eos_web';
   private readonly nfsServerPath = 'SERVER-SMB02:/integrace-eos-web';
 

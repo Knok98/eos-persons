@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
-import { ProxioConnectService } from './services/SAMBA/SAMBA-connect.service';
+import { SrvSMB02 } from './services/NFS/nfs-connect.service';
 
 @Controller('source')
 export class FileDownloadController {
-  constructor(private readonly fileDownloadService: ProxioConnectService) {}
+  constructor(private readonly fileDownloadService: SrvSMB02) {}
 
   @Get('download')
   async downloadFile(): Promise<string> {
