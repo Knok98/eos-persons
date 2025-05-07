@@ -8,19 +8,22 @@ const execAsync = promisify(exec);
 
 @Injectable()
 export class SrvSMB02 {
-  private readonly nfsMountPoint = 'Z:'; // Drive letter for the mounted NFS share
-  private readonly nfsServerPath = '\\\\SERVER-SMB02\\integrace-sw$\\integrace-eos-web';
+  private readonly nfsMountPoint = '/mnt/integrace_eos_web';
+  private readonly nfsServerPath = 'SERVER-SMB02:/integrace-sw$/integrace-eos-web';
 
   async downloadFile(): Promise<void> {
     const remoteFilePath = 'data.xml';
     const localFilePath = path.join(process.cwd(), 'public', 'data.xml');
 
     try {
-      // Mount the NFS share (requires administrative privileges)
-      await execAsync(`powershell.exe -Command "New-PSDrive -Name Z -PSProvider FileSystem -Root ${this.nfsServerPath} -Persist"`);
+      // Create mount point if it doesn't exist
+      await fsPromises.mkdir(this.nfsMountPoint, { recursive: true });
+
+      // Mount the NFS share (requires root privileges)
+      await execAsync(`sudo mount -t nfs ${this.nfsServerPath} ${this.nfsMountPoint}`);
 
       // Copy the file
-      await execAsync(`copy ${path.join(this.nfsMountPoint, remoteFilePath)} ${localFilePath}`);
+      await execAsync(`cp ${path.join(this.nfsMountPoint, remoteFilePath)} ${localFilePath}`);
 
       console.log('File downloaded successfully');
     } catch (error) {
@@ -33,7 +36,7 @@ export class SrvSMB02 {
     } finally {
       try {
         // Unmount the share
-        await execAsync(`powershell.exe -Command "Remove-PSDrive -Name Z"`);
+        await execAsync(`sudo umount ${this.nfsMountPoint}`);
       } catch (unmountError) {
         console.error('Error unmounting:', unmountError);
       }
