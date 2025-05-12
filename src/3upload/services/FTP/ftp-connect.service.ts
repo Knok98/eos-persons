@@ -26,7 +26,6 @@ export class FtpConnectService implements UploadService {
         password,
         port: Number(port),
         secure: false,
-
       });
       this.logger.log('Connected to FTP server');
     } catch (error) {
