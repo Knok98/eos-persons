@@ -14,7 +14,7 @@ export class SrvSMB02 implements IFileDownloadService {
     const smb2Client = new SMB2({
       share: '\\\\SERVER-SMB02\\integrace-sw$',
       domain: process.env.SMB_DOMAIN || '',
-      username: process.env.SMB_USERNAME || '',
+      username: process.env.SMB_USER || '',
       password: process.env.SMB_PASSWORD || '',
     });
 

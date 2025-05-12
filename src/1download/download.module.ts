@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ScheduleModule } from '@nestjs/schedule';
 import { FileDownloadController } from './download.controller';
-import { SrvSMB02 } from './services/NFS/nfs-connect.service';
+import { SrvSMB02 } from './services/SAMBA/SAMBA-connect.service';
 import { FileDownloadCronService } from './services/download.cron.controller';
 
 @Module({

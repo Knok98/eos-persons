@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { SrvSMB02 } from './services/NFS/nfs-connect.service';
+import { SrvSMB02 } from './services/SAMBA/SAMBA-connect.service';
 
 @Controller('source')
 export class FileDownloadController {
