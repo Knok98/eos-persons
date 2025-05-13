@@ -16,7 +16,7 @@ export class SambaService implements IFileDownloadService {
             address: '\\\\SERVER-SMB02\\integrace-eos\\',
             domain: 'praha10.local',
             username: 'integrace.web',
-            password: 'QxY5Y$£6£38v^0',
+            password: '>QxY5Y$£6£38v^0.',
         });
     }
 
