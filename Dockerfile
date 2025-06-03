@@ -29,6 +29,7 @@ RUN apt-get update && apt-get install -y smbclient
 # Copy only the necessary files from the build stage
 COPY --from=build /app/package.json /app/package-lock.json ./
 COPY --from=build /app/dist ./dist
+COPY --from=build /app/public ./public  
 
 # Install only production dependencies
 RUN npm ci --only=production
