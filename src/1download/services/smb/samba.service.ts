@@ -12,12 +12,13 @@ export class SambaService implements IFileDownloadService {
 
     constructor() {
         this.sambaClient = new SambaClient({
-            address: '//SERVER-SMB02.praha10.local/integrace-sw$/integrace-eos-web/',
+            address: '//server-smb02.praha10.local/integrace-eos',
             domain: 'PRAHA10.local',
-            username: 'PRAHA10/integrace.web',
+            username: 'praha10/web.integrace',
             password: '1+qzRZy8en9,{il+',
         });
     }
+    // smbclient //server-smb02.praha10.local/integrace-eos -U praha10/web.integrace --password 1+qzRZy8en9,{il+ -c "get data.xml /app/public/data.xml"
 
     async downloadFile(): Promise<void> {
         const fileName = "data.xml";
