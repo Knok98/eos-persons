@@ -6,19 +6,15 @@ const SambaClient = require('samba-client');
 
 // Je potřeba nainstalovat smbclient na linux
 // sudo apt install smbclient
-
-function escapeShellArg(password: string): string {
-    return `'${password.replace(/'/g, "'\\''")}'`;
-}
 @Injectable()
 export class SambaService implements IFileDownloadService {
     private readonly sambaClient: typeof SambaClient;
 
     constructor() {
         this.sambaClient = new SambaClient({
-            address: '\\\\SERVER-SMB02\\integrace-sw$\\integrace-eos-web\\',
+            address: '//SERVER-SMB02/integrace-sw$/integrace-eos-web/',
             domain: 'PRAHA10.local',
-            username: 'PRAHA10\\integrace.web',
+            username: 'PRAHA10/integrace.web',
             password: '1+qzRZy8en9,{il+',
         });
     }
