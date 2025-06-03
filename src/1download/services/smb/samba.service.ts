@@ -12,7 +12,7 @@ export class SambaService implements IFileDownloadService {
 
     constructor() {
         this.sambaClient = new SambaClient({
-            address: '//SERVER-SMB02/integrace-sw$/integrace-eos-web/',
+            address: '//SERVER-SMB02.praha10.local/integrace-sw$/integrace-eos-web/',
             domain: 'PRAHA10.local',
             username: 'PRAHA10/integrace.web',
             password: '1+qzRZy8en9,{il+',
