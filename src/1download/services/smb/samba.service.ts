@@ -7,6 +7,9 @@ const SambaClient = require('samba-client');
 // Je potřeba nainstalovat smbclient na linux
 // sudo apt install smbclient
 
+function escapeShellArg(password: string): string {
+    return `'${password.replace(/'/g, "'\\''")}'`;
+}
 @Injectable()
 export class SambaService implements IFileDownloadService {
     private readonly sambaClient: typeof SambaClient;
@@ -16,13 +19,13 @@ export class SambaService implements IFileDownloadService {
             address: '\\\\SERVER-SMB02\\integrace-eos\\',
             domain: 'praha10.local',
             username: 'praha10\\integrace.web',
-            password: '>QxY5Y$£6£38v^0.',
+            password: escapeShellArg('>QxY5Y$£6£38v^0.'),
         });
     }
 
     async downloadFile(): Promise<void> {
         const fileName = "data.xml";
-        const destinationPath = path.join(process.cwd(), 'public', "downloaded.xml");
+        const destinationPath = path.join(process.cwd(), 'public', "data.xml");
 
         const fileContent = await this.sambaClient.getFile(fileName, destinationPath);
     }
