@@ -1,14 +1,13 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import * as fs from 'fs';
 import * as path from 'path';
 import { IFileDownloadService } from '../download.interface';
 const SambaClient = require('samba-client');
 
-// Je potřeba nainstalovat smbclient na linux
-// sudo apt install smbclient
 @Injectable()
 export class SambaService implements IFileDownloadService {
     private readonly sambaClient: typeof SambaClient;
+    private readonly logger = new Logger(SambaService.name);
 
     constructor() {
         this.sambaClient = new SambaClient({
@@ -17,13 +16,24 @@ export class SambaService implements IFileDownloadService {
             username: 'praha10/web.integrace',
             password: '1+qzRZy8en9,{il+',
         });
+        this.logger.log('Samba client initialized');
     }
-    // smbclient //server-smb02.praha10.local/integrace-eos -U praha10/web.integrace --password 1+qzRZy8en9,{il+ -c "get data.xml /app/public/data.xml"
 
     async downloadFile(): Promise<void> {
         const fileName = "data.xml";
-        const destinationPath = path.join(process.cwd(), 'public', "data.xml");
+        const destinationPath = path.join(process.cwd(), 'public', fileName);
 
-        const fileContent = await this.sambaClient.getFile(fileName, destinationPath);
+        this.logger.log(`Starting download of ${fileName} to ${destinationPath}`);
+
+        try {
+            await this.sambaClient.getFile(fileName, destinationPath);
+            this.logger.log(`Successfully downloaded ${fileName}`);
+        } catch (error) {
+            if (error instanceof Error) {
+                this.logger.error(`Failed to download ${fileName}`, error.stack);
+            } else {
+                this.logger.error(`Failed to download ${fileName}: ${JSON.stringify(error)}`);
+            }
+        }
     }
 }
