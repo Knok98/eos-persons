@@ -23,10 +23,14 @@ export  interface PersonRoleAssignment {
 export interface OrgUnitDetails {
     iosPozice: string | undefined;
     iosFunkce: string | undefined;
+    iosIdentifier: string | undefined;
+    iosSuperIdentifier: string | undefined;
   }
 
 export interface OrgUnit {
     name: string;
+    identifier: string | undefined;
+    'parent-identifier': string | undefined;
     'org-roles'?: {
     'org-role': OrgRole | OrgRole[];
     };
@@ -62,4 +66,11 @@ export interface Record {
     iosFunkce?: string;
     iosBudova?: string;
     iosKancelar?: string;
+    iosPracoviste?: string;
+    iosReferat?: string;
+    iosOddeleni?: string;
+    iosOdbor?: string;
+    iosJine?: string;
+    iosNadrizena_jednotka?: string;
+
   }
