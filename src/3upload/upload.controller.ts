@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { FtpConnectService } from './services/FTP/ftp-connect.service';
+import { FtpConnectService } from './services/SFTP/sftp-connect.service';
 
 @Controller('source')
 export class FtpConnectController {

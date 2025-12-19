@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Cron } from '@nestjs/schedule';
-import { XmlToCsvService } from './xml2csv/xml2csv.service';
+import { XmlToCsvService } from './inqool_xml2csv/xml2csv.service';
 
 @Injectable()
 export class ConvertCronService {

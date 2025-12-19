@@ -90,14 +90,19 @@ export class XmlToCsvService implements IConvertService {
         const assignmentsArray = Array.isArray(assignments) ? assignments : [assignments];
         for (const assignment of assignmentsArray) {
         if (assignment['person-identifier'] === personIdentifier) {
-          const details: OrgUnitDetails = { iosPozice: unit.name, iosFunkce: role.name };
+          const details: OrgUnitDetails = { 
+            iosPozice: unit.name, 
+            iosFunkce: role.name,
+            iosIdentifier: unit.identifier,
+            iosSuperIdentifier: unit['parent-identifier']
+          };
           orgUnitCache.set(personIdentifier, details);
           return details;
         }
         }
       }
       }
-      return { iosPozice: undefined, iosFunkce: undefined };
+      return { iosPozice: undefined, iosFunkce: undefined, iosIdentifier: undefined, iosSuperIdentifier: undefined };
     };
 
     

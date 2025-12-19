@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Cron } from '@nestjs/schedule';
-import { FtpConnectService } from './FTP/ftp-connect.service';
+import { FtpConnectService } from './SFTP/sftp-connect.service';
 
 @Injectable()
 export class UploadCronService {
