@@ -5,12 +5,12 @@ iosOsc,iosTitul_pred,iosPrijmeni,iosJmeno,iosTitul_za,iosLinka1,iosEmail,iosMobi
 2075,Mgr.,Brož,Vladimír,,267093388,vladimir.broz@praha10.cz,,referent/ka,K,319,,Oddělení registrace podnikatelů,Odbor živnostenský,,,Tajemník
 1606,Ing.,Borovková,Marie,,267093376,marie.borovkova@praha10.cz,720935228,vedoucí odboru stavebního,K,401,,,Odbor stavební,,,Tajemník
 9,Bc.,Borská,Hana,DiS.,267093289,hana.borska@praha10.cz,,vedoucí referátu správních řízení,K,316,Referát správních řízení,Oddělení registrace podnikatelů,Odbor živnostenský,,,Tajemník
-1476,,Boučková,Jitka,,267093344,jitka.bouckova@praha10.cz,,referent/ka - kontrolor/ka,V,417,,Oddělení pedagogicky - metodických a kontrolních činností,Odbor školství,,,Tajemník
+1476,,Boučková,Jitka,,267093344,jitka.bouckova@praha10.cz,,referent/ka - kontrolor/ka,V,417,,Oddělení pedagogicky-metodických a kontrolních činností,Odbor školství,,,Tajemník
 1754,Ing.,Boušková,Hana,,267093605,hana.bouskova@praha10.cz,705763056,referent/ka - inženýrské sítě,K,408,Referát ostatních staveb a záměrů II.,"Oddělení ostatních staveb a záměrů, vodoprávní úřad",Odbor stavební,,,Tajemník
 2528,,Brandejsová,Jana,,267093562,jana.brandejsova@praha10.cz,,administrativní a spisová/ý pracovnice/pracovník,K,325,,Oddělení ekonomiky a administrativy,Odbor sociální,,,Tajemník
 1002,,Brouzdová,Eva,,267093350,eva.brouzdova@praha10.cz,,referent/ka pro správu poplatků ze psů,V,603,,Oddělení místních příjmů,Odbor ekonomický,,,Tajemník
 1748,Mgr.,Budař,Petr,,267093307,petr.budar@praha10.cz,,vedoucí referátu právního (právník),K,418,Referát právní,Oddělení státní správy,Odbor dopravy,,,Tajemník
-1166,Mgr.,Colon,Martin,,267093321,martin.colon@praha10.cz,725785761,vedoucí oddělení přestupkového,K,213,,Oddělení přestupkové,Odbor občanskosprávní,,,Tajemník
+1166,Mgr.,Colon,Martin,,267093321,martin.colon@praha10.cz,,vedoucí oddělení přestupkového,K,213,,Oddělení přestupkové,Odbor občanskosprávní,,,Tajemník
 11,,Conková,Naděžda,,267093369,nadezda.conkova@praha10.cz,,referent/ka,K,307,Referát živnostenského rejstříku,Oddělení evidence podnikatelů,Odbor živnostenský,,,Tajemník
 759,Ing.,Čech,Daniel,,267093476,daniel.cech@praha10.cz,724186210,vedoucí oddělení státní správy,K,510,,Oddělení státní správy,Odbor dopravy,,,Tajemník
 1153,Ing.,Dejnožka,Martin,,267093267,martin.dejnozka@praha10.cz,725921160,vedoucí referátu posuz. PD a kontr. v obl.dopr. a inženýrských sítí,K,515,Referát posuzování PD a kontroly v ob. dopravy a inženýrských sítí,Oddělení státní správy,Odbor dopravy,,,Tajemník
@@ -93,7 +93,7 @@ iosOsc,iosTitul_pred,iosPrijmeni,iosJmeno,iosTitul_za,iosLinka1,iosEmail,iosMobi
 2707,,Šavrdová,Marie,,267093355,marie.savrdova@praha10.cz,705763050,"referent/ka - stavby pro reklamu, stánky",K,407,Referát jednoduchých staveb,"Oddělení jednoduchých staveb, kontrola staveb",Odbor stavební,,,Tajemník
 1732,,Šimonová,Lucie,,267093384,lucie.simonova@praha10.cz,702168359,vedoucí referátu ekonomiky a technického dozoru,K,505,Referát ekonomiky a technického dozoru,,Odbor životního prostředí,,,Tajemník
 1651,Ing.,Škachová,Karolína,,267093259,karolina.skachova@praha10.cz,705763043,"vedoucí oddělení ostatních staveb a záměrů, vodoprávní úřad",K,409,,"Oddělení ostatních staveb a záměrů, vodoprávní úřad",Odbor stavební,,,Tajemník
-1677,,Šustrová,Petra,,267093671,petra.sustrova@praha10.cz,,asistent/ka tajemníka,K,702,,,Kancelář tajemníka,,,Tajemník
+1677,,Koš Šustrová,Petra,,267093671,petra.sustrova@praha10.cz,,asistent/ka tajemníka,K,702,,,Kancelář tajemníka,,,Tajemník
 266,Bc.,Švec,Ondřej,,267093622,ondrej.svec@praha10.cz,724522208,vedoucí referátu cestovních dokladů,K,201,Referát cestovních dokladů,Oddělení osobních dokladů a evidence obyvatel,Odbor občanskosprávní,,,Tajemník
 568,Mgr.,Trávníčková,Michaela,,267093418,michaela.travnickova@praha10.cz,724353832,vedoucí oddělení osobních dokladů a evidence obyvatel,K,202,,Oddělení osobních dokladů a evidence obyvatel,Odbor občanskosprávní,,,Tajemník
 1178,,Troníčková,Markéta,,267093314,marketa.tronickova@praha10.cz,737202406,referent/ka,V,503,,Oddělení právních činností a VZ,Odbor bytů a nebytových prostor,,,Tajemník
@@ -125,7 +125,7 @@ iosOsc,iosTitul_pred,iosPrijmeni,iosJmeno,iosTitul_za,iosLinka1,iosEmail,iosMobi
 1836,Ing.,Nováková,Magda,,267093542,magda.novakova@praha10.cz,727813564,vedoucí referátu oprav a investic,K,618,Referát oprav a investic,Oddělení přípravy a realizace oprav a investic,Odbor majetkoprávní,,,Tajemník
 1838,Ing.,Tiefenbach,Lucie,,267093293,lucie.tiefenbach@praha10.cz,702137228,vedoucí referátu sociální práce,V,318a,Referát sociální práce,Oddělení sociální práce,Odbor sociální,,,Tajemník
 1859,Ing.,Procházka,Jiří,,267093410,jiri.prochazka@praha10.cz,702004838,vedoucí oddělení městské zeleně a čistoty,K,502,,Oddělení městské zeleně a čistoty,Odbor životního prostředí,,,Tajemník
-1901,,Hubníková,Ivana,,267093548,ivana.hubnikova@praha10.cz,,referent/ka,K,602,,Oddělení prodeje nemovitého majetku a privatizace,Odbor majetkoprávní,,,Tajemník
+1901,,Hubníková,Ivana,,267093548,ivana.hubnikova@praha10.cz,,referent/ka,K,604,,Oddělení prodeje nemovitého majetku a privatizace,Odbor majetkoprávní,,,Tajemník
 1909,Bc.,Vávrová,Kateřina,DiS.,267093639,katerina.vavrova@praha10.cz,702187288,referent/ka,K,722,,Oddělení Rady a Zastupitelstva,Kancelář starosty,,,Starosta
 1965,Mgr.,Šimek,Stanislav,,267093566,stanislav.simek@praha10.cz,606020745,referent/ka,V,714,,Oddělení bezpečnostního managementu,Odbor kontroly a komunikace,,,Tajemník
 1913,,Doležal,Martin,,267093425,martin.dolezal@praha10.cz,,rejstříkář/ka,K,209,Referát rejstříku přestupků,Oddělení přestupkové,Odbor občanskosprávní,,,Tajemník
@@ -153,12 +153,12 @@ iosOsc,iosTitul_pred,iosPrijmeni,iosJmeno,iosTitul_za,iosLinka1,iosEmail,iosMobi
 2250,,Hlaváčková,Magdaléna,,267093424,magdalena.hlavackova@praha10.cz,,"referent/ka - rozbory,pozemky",K,614,,Oddělení architektonické a urbanistické koncepce,Kancelář hlavního architekta,,,Tajemník
 2252,,Kostelková,Nikola,,267093249,nikola.kostelkova@praha10.cz,,vedoucí referátu bytů,V,509,Referát bytů,Oddělení bytů a nebytových prostor,Odbor bytů a nebytových prostor,,,Tajemník
 2405,,Mrkalová,Pavlína,,267093524,pavlina.mrkalova@praha10.cz,,referent/ka,K,606,Referát nájemních vztahů k pozemkům,Oddělení prodeje nemovitého majetku a privatizace,Odbor majetkoprávní,,,Tajemník
-2838,Ing.,Součková,Zuzana,,267093389,zuzana.souckova@praha10.cz,,ekonom/ka,K,604,,Oddělení ekonomiky a dotačního managementu OMP,Odbor majetkoprávní,,,Tajemník
+2838,Ing.,Součková,Zuzana,,267093389,zuzana.souckova@praha10.cz,,ekonom/ka,K,616,,Oddělení ekonomiky a dotačního managementu OMP,Odbor majetkoprávní,,,Tajemník
 2291,,Procházková,Klára,,267093359,klara.prochazkova@praha10.cz,,matrikář/ka - úmrtní,K,221,,"Oddělení matrik,státního občanství a vnitřní správy",Odbor občanskosprávní,,,Tajemník
 2300,,Hejtmánková,Miloslava,,267093462,miloslava.hejtmankova@praha10.cz,,referent/ka,K,723,,Oddělení Rady a Zastupitelstva,Kancelář starosty,,,Starosta
 2302,Mgr.,Kyselová,Blanka,,267093372,blanka.kyselova@praha10.cz,,vedoucí referátu odpadů,K,523,Referát odpadů,Oddělení životního prostředí,Odbor životního prostředí,,,Tajemník
 2314,,Cirková,Sylva,,267093364,sylva.cirkova@praha10.cz,,učetní,V,612,,Oddělení účetnictví,Odbor ekonomický,,,Tajemník
-2313,Mgr.,Šetková,Petra,,267093532,petra.setkova@praha10.cz,705763033,matrikář/ka - úmrtní,K,218,,"Oddělení matrik,státního občanství a vnitřní správy",Odbor občanskosprávní,,,Tajemník
+2313,Mgr.,Šetková,Petra,,267093532,petra.setkova@praha10.cz,,matrikář/ka - úmrtní,K,218,,"Oddělení matrik,státního občanství a vnitřní správy",Odbor občanskosprávní,,,Tajemník
 2330,,Březinová,Blanka,,267093301,blanka.brezinova@praha10.cz,,referent/ka,K,603,,Oddělení prodeje nemovitého majetku a privatizace,Odbor majetkoprávní,,,Tajemník
 2346,Ing.arch.,Berit,Daniel,,267093386,daniel.berit@praha10.cz,705763058,"vedoucí oddělení jednoduchých staveb, kontrola staveb",K,402,,"Oddělení jednoduchých staveb, kontrola staveb",Odbor stavební,,,Tajemník
 2348,,Koželuh,Libor,DiS.,267093554,libor.kozeluh@praha10.cz,720965933,sociální pracovník,V,302a,Referát sociální práce,Oddělení sociální práce,Odbor sociální,,,Tajemník
@@ -200,10 +200,9 @@ iosOsc,iosTitul_pred,iosPrijmeni,iosJmeno,iosTitul_za,iosLinka1,iosEmail,iosMobi
 2673,,Liptáková,Dana,,267093280,dana.liptakova@praha10.cz,,administrativní a spisová/ý pracovnice/pracovník,K,321,,Oddělení zřízených organizací a zdravotnictví,Odbor sociální,,,Tajemník
 2675,Ing.,Březina,Roman,,267093421,roman.brezina@praha10.cz,702195564,vedoucí odboru bytů a nebytových prostor,V,501,,,Odbor bytů a nebytových prostor,,,Tajemník
 2677,Bc.,Sosnová,Martina,,267093334,martina.sosnova@praha10.cz,605326697,sociální pracovnice,V,313,Referát práce s rodinou a dětmi,Oddělení sociálně-právní ochrany dětí,Odbor sociální,,,Tajemník
-2676,Mgr.,Válková,Klára,,267093486,klara.valkova@praha10.cz,,referent/ka pro MŠ,V,406,,Oddělení pedagogicky - metodických a kontrolních činností,Odbor školství,,,Tajemník
+2676,Mgr.,Válková,Klára,,267093486,klara.valkova@praha10.cz,,referent/ka pro MŠ,V,406,,Oddělení pedagogicky-metodických a kontrolních činností,Odbor školství,,,Tajemník
 2679,MgA.,Kašpar,David,,267093132,david.kaspar@praha10.cz,777321105,místostarosta,K,807,,,Kancelář starosty,,Místostarosta,Starosta
-2681,,Stach,Lucie,DiS.,267093447,lucie.stach@praha10.cz,,asistent/ka členů RMČ,A,403,,Oddělení sekretariátu starosty,Kancelář starosty,,,Starosta
-2692,Ing.,Jirásek,Jan,,267093593,jan.jirasek@praha10.cz,,vedoucí oddělení ekonomiky a dotačního managementu OMP,K,616,,Oddělení ekonomiky a dotačního managementu OMP,Odbor majetkoprávní,,,Tajemník
+2692,Ing.,Jirásek,Jan,,267093593,jan.jirasek@praha10.cz,,vedoucí oddělení ekonomiky a dotačního managementu OMP,K,602,,Oddělení ekonomiky a dotačního managementu OMP,Odbor majetkoprávní,,,Tajemník
 2697,,Bernášková,Iva,,267093604,iva.bernaskova@praha10.cz,,finanční referent/ka a pokladní (výdaje),V,109,Referát pokladen a rozpočtu,Oddělení rozpočtu,Odbor ekonomický,,,Tajemník
 2709,,Kubcová,Martina,,267093340,martina.kubcova@praha10.cz,,"administrativní pracovník/ce, referent/ka pro volby",K,211,,,Odbor občanskosprávní,,,Tajemník
 2711,,Martínková,Jana,,267093211,jana.martinkova@praha10.cz,703866785,referent/ka odd.strategického rozvoje a participace,K,713,,Oddělení strategického rozvoje a participace,Kancelář tajemníka,,,Tajemník
@@ -219,7 +218,7 @@ iosOsc,iosTitul_pred,iosPrijmeni,iosJmeno,iosTitul_za,iosLinka1,iosEmail,iosMobi
 2850,,Janíková,Lenka,,267093452,lenka.janikova@praha10.cz,,referent/ka - podatelna,K,106,,Oddělení podatelny,Odbor hospodářské správy,,,Tajemník
 2859,Ing.,Strachotová,Lenka,,267093380,lenka.strachotova@praha10.cz,724787420,koordinátor/ka a metodik/čka,V,410,,Oddělení veřejné podpory,Odbor kultury a projektů,,,Tajemník
 2860,,Valešová,Tereza,DiS.,267093426,tereza.valesova@praha10.cz,605876760,referent/ka údržby městské zeleně,K,501,,Oddělení městské zeleně a čistoty,Odbor životního prostředí,,,Tajemník
-2863,,Pobuda,Mikuláš,,267093473,mikulas.pobuda@praha10.cz,774643435,uvolněný člen RMČ,K,814,,,Kancelář starosty,,Radní,Starosta
+2863,,Pobuda,Mikuláš,,267093473,mikulas.pobuda@praha10.cz,,uvolněný člen RMČ,K,814,,,Kancelář starosty,,Radní,Starosta
 2868,,Adamcová,Ilona,,267093400,ilona.adamcova@praha10.cz,,referent/ka,V,706,,Oddělení stížností a svobodného přístupu k informacím,Odbor kontroly a komunikace,,,Tajemník
 2871,,Andonova,Ilona,,267093136,ilona.andonova@praha10.cz,,referent/ka,K,607,,Oddělení výkonu vlastnických práv,Odbor majetkoprávní,,,Tajemník
 2884,,Vajnerová,Hana,,267093501,hana.vajnerova@praha10.cz,,vedoucí oddělení provozně - ekonomického,V,205,,Oddělení provozně - ekonomické,Odbor hospodářské správy,,,Tajemník
@@ -281,7 +280,7 @@ iosOsc,iosTitul_pred,iosPrijmeni,iosJmeno,iosTitul_za,iosLinka1,iosEmail,iosMobi
 3135,,Šlapák,Miloš,,267093377,milos.slapak@praha10.cz,737759044,referent/ka správy majetku,V,201,,,Odbor hospodářské správy,,,Tajemník
 3137,,Vilímcová,Milena,,267093622,milena.vilimcova@praha10.cz,,referent/ka,K,201,Referát cestovních dokladů,Oddělení osobních dokladů a evidence obyvatel,Odbor občanskosprávní,,,Tajemník
 3134,Ing.,Šafránková,Petra,,267093616,petra.safrankova@praha10.cz,,vedoucí oddělení rozpočtu,V,608,,Oddělení rozpočtu,Odbor ekonomický,,,Tajemník
-3144,Bc.,Kypsoňová,Ilona,,267093648,ilona.kypsonova@praha10.cz,705763034,matrikář/ka - sňatková/ý,K,219,,"Oddělení matrik,státního občanství a vnitřní správy",Odbor občanskosprávní,,,Tajemník
+3144,Bc.,Kypsoňová,Ilona,,267093648,ilona.kypsonova@praha10.cz,,matrikář/ka - sňatková/ý,K,219,,"Oddělení matrik,státního občanství a vnitřní správy",Odbor občanskosprávní,,,Tajemník
 3145,,Vinš,Ondřej,,267093528,ondrej.vins@praha10.cz,737794457,specialista/ka kybernetické bezpečnosti,K,311,,,Odbor informatiky,,,Tajemník
 3151,,Felberová,Markéta,,267093485,marketa.felberova@praha10.cz,703866788,koordinátor/ka a metodik/čka dotací,V,410,,Oddělení veřejné podpory,Odbor kultury a projektů,,,Tajemník
 3153,Mgr.,Nešev,Toma,,267093286,toma.nesev@praha10.cz,,referent/ka,K,320,,Oddělení registrace podnikatelů,Odbor živnostenský,,,Tajemník
@@ -309,7 +308,7 @@ iosOsc,iosTitul_pred,iosPrijmeni,iosJmeno,iosTitul_za,iosLinka1,iosEmail,iosMobi
 3183,Ing.,Tajovská,Štěpánka,,267093123,stepanka.tajovska@praha10.cz,705763057,referent/ka,K,407,Referát ostatních staveb a záměrů II.,"Oddělení ostatních staveb a záměrů, vodoprávní úřad",Odbor stavební,,,Tajemník
 3182,Ing.arch.,Štěpánková,Alice,,267093416,alice.stepankova@praha10.cz,,referent/ka - architekt/ka,K,613,,Oddělení architektonické a urbanistické koncepce,Kancelář hlavního architekta,,,Tajemník
 3184,Mgr.,Bílá,Kamila,,267093327,kamila.bila@praha10.cz,774236034,vedoucí Odboru Kanceláře starosty,K,827,,,Kancelář starosty,,,Starosta
-3185,Bc.,Buchníčková,Michaela,,267093139,michaela.buchnickova@praha10.cz,,vedoucí pedagogicky - metodických a kontrolních činností,V,405,,Oddělení pedagogicky - metodických a kontrolních činností,Odbor školství,,,Tajemník
+3185,Bc.,Buchníčková,Michaela,,267093139,michaela.buchnickova@praha10.cz,,vedoucí pedagogicky-metodických a kontrolních činností,V,405,,Oddělení pedagogicky-metodických a kontrolních činností,Odbor školství,,,Tajemník
 3186,,Tropp,Ján,DiS.,267093333,jan.tropp@praha10.cz,737790552,vedoucí oddělení tiskového,K,706,,Oddělení tiskové,Kancelář starosty,,,Starosta
 1772,Bc.,Čvančarová,Kateřina,,267093438,katerina.cvancarova@praha10.cz,604676686,asistent/ka a ekonom/ka,K,308,,,Odbor informatiky,,,Tajemník
 3191,,Cakl,Daniel,,267093319,daniel.cakl@praha10.cz,,referent/ka,V,513,,Oddělení správy domů,Odbor bytů a nebytových prostor,,,Tajemník
@@ -364,7 +363,7 @@ iosOsc,iosTitul_pred,iosPrijmeni,iosJmeno,iosTitul_za,iosLinka1,iosEmail,iosMobi
 3334,Ing.,Šmehyl,Matěj,,267093121,matej.smehyl@praha10.cz,,asistent/ka předsedů/předsedkyň výborů ZMČ,K,704,,Oddělení sekretariátu starosty,Kancelář starosty,,,Starosta
 3340,Mgr.,Jiroutová,Soňa,DiS.,267093516,sona.jiroutova@praha10.cz,,sociální pracovník,V,307,Referát práce s rodinou a dětmi,Oddělení sociálně-právní ochrany dětí,Odbor sociální,,,Tajemník
 3342,Ing.,Fingerlandová,Petra,,267093533,petra.fingerlandova@praha10.cz,,vedoucí odd. strategického rozvoje a participace,K,714,,Oddělení strategického rozvoje a participace,Kancelář tajemníka,,,Tajemník
-3343,,Táborová,Veronika,DiS.,267093134,veronika.taborova@praha10.cz,,referent/ka adminstrativně technický/á pracovník/ce,V,403,,Oddělení pedagogicky - metodických a kontrolních činností,Odbor školství,,,Tajemník
+3343,,Táborová,Veronika,DiS.,267093134,veronika.taborova@praha10.cz,,referent/ka adminstrativně technický/á pracovník/ce,V,403,,Oddělení pedagogicky-metodických a kontrolních činností,Odbor školství,,,Tajemník
 3345,Bc.,Makulová,Lenka,,267093221,lenka.makulova@praha10.cz,,referent/ka - dopravní přestupky,K,413,Referát právní,Oddělení státní správy,Odbor dopravy,,,Tajemník
 3350,BcA.,Karpeles,Pavlína,DiS.,267093348,pavlina.karpeles@praha10.cz,,projektová manažer/ka pro oblast kultury,V,414,,,Odbor kultury a projektů,,,Tajemník
 3349,,Šneiderová,Jitka,,267093422,jitka.sneiderova@praha10.cz,,referent/ka,K,621,,Oddělení přípravy veřejných zakázek,Odbor majetkoprávní,,,Tajemník
@@ -389,12 +388,14 @@ iosOsc,iosTitul_pred,iosPrijmeni,iosJmeno,iosTitul_za,iosLinka1,iosEmail,iosMobi
 3376,Ing.,Rymonová,Kateřina,,267093225,katerina.rymonova@praha10.cz,,referent/ka odpadů,K,524,Referát odpadů,Oddělení životního prostředí,Odbor životního prostředí,,,Tajemník
 3377,Mgr.,Křížová,Kateřina,,267093445,katerina.krizova@praha10.cz,,vedoucí oddělení školských zařízení,V,505,,Oddělení školských zařízení,Odbor bytů a nebytových prostor,,,Tajemník
 3385,,Ficková,Petra,,267093302,petra.fickova@praha10.cz,,referent/ka - administrace dopravní přestupky,K,513,Referát právní,Oddělení státní správy,Odbor dopravy,,,Tajemník
-3386,Ing.,Janák,Michal,,267093396,michal.janak@praha10.cz,,IT konzultant/ka,K,308,,,Odbor informatiky,,,Tajemník
-3381,Bc.,Němcová,Veronika,,,veronika.nemcova@praha10.cz,,referent/ka,,,,Oddělení stížností a svobodného přístupu k informacím,Odbor kontroly a komunikace,,,Tajemník
-3382,Mgr.et Mgr.,Macurová,Klára,,267093657,klara.macurova@praha10.cz,,sociální pracovnice,V,307,Referát práce s rodinou a dětmi,Oddělení sociálně-právní ochrany dětí,Odbor sociální,,,Tajemník
+3381,Bc.,Němcová,Veronika,,267093387,veronika.nemcova@praha10.cz,,referent/ka,V,706,,Oddělení stížností a svobodného přístupu k informacím,Odbor kontroly a komunikace,,,Tajemník
 3384,Mgr.,Frühlingová,Eva,,267093650,eva.fruhlingova@praha10.cz,,referent/ka - dopravní přestupky,K,413,Referát právní,Oddělení státní správy,Odbor dopravy,,,Tajemník
 3383,,Šimková,Kristýna,DiS.,267093311,kristyna.simkova@praha10.cz,,referent/ka,V,515,Referát nebytových prostor,Oddělení bytů a nebytových prostor,Odbor bytů a nebytových prostor,,,Tajemník
 3394,Bc.,Oláh,Jaroslav,,267093498,jaroslav.olah@praha10.cz,,technický/á referent/ka,K,619,Referát oprav a investic,Oddělení přípravy a realizace oprav a investic,Odbor majetkoprávní,,,Tajemník
 3395,Mgr.,Zubatá,Ladislava,,267093563,ladislava.zubata@praha10.cz,,právník/právnička,K,520,,Oddělení životního prostředí,Odbor životního prostředí,,,Tajemník
-3392,Bc.,Zběhlíková,Andrea,,267093545,andrea.zbehlikova@praha10.cz,,referent/ka pro ZŠ,V,406,,Oddělení pedagogicky - metodických a kontrolních činností,Odbor školství,,,Tajemník
+3392,Bc.,Zběhlíková,Andrea,,267093545,andrea.zbehlikova@praha10.cz,,referent/ka pro ZŠ,V,406,,Oddělení pedagogicky-metodických a kontrolních činností,Odbor školství,,,Tajemník
 1862,Bc.,Hejrová Kořínková,Iva,DiS.,267093294,iva.hejrovakorinkova@praha10.cz,,sociální pracovnice,V,310,Referát práce s rodinou a dětmi,Oddělení sociálně-právní ochrany dětí,Odbor sociální,,,Tajemník
+3398,,Vetterlová,Michaela,,267093146,michaela.vetterlova@praha10.cz,,referent/ka kontroly výstupů,K,623,,Oddělení právní a kontroly výstupů,Odbor majetkoprávní,,,Tajemník
+3399,,Killianová,Klára,,267093525,klara.killianova@praha10.cz,,referent/ka oddělení tiskového,K,707,,Oddělení tiskové,Kancelář starosty,,,Starosta
+3397,,Polovka,Michal,,267093686,michal.polovka@praha10.cz,,technický/á referent/ka,,,,Oddělení provozně - technické,Odbor hospodářské správy,,,Tajemník
+3416,Ing.,Pechrová,Jana,,267093405,jana.pechrova@praha10.cz,,projektový/á manažer/ka,K,616,,Oddělení ekonomiky a dotačního managementu OMP,Odbor majetkoprávní,,,Tajemník
