@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { XmlToCsvService } from './service/inqool_xml2csv/xml2csv.service';
+import { XmlToCsvService } from './service/xml2csv/xml2csv.service';
 
 @Controller('source')
 // @Controller('xml-to-csv')
