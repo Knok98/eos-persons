@@ -10,7 +10,7 @@ export class FtpConnectService implements UploadService {
 
   constructor() {
     this.client = new ftp.Client();
-    this.client.ftp.verbose = true; // Enable verbose logging
+    this.client.ftp.verbose = true; 
   }
 
   async connect() {
