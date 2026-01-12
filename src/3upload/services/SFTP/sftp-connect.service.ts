@@ -3,7 +3,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import * as path from 'path';
 import { UploadService } from '../upload.interface';
 
-// CommonJS import – bez potřeby esModuleInterop
+
 const SftpClient = require('ssh2-sftp-client');
 
 @Injectable()
@@ -17,9 +17,9 @@ export class FtpConnectService implements UploadService {
 
   async connect() {
     const host = process.env.FTP_HOST;
-    const username = process.env.FTP_USER;            // ponecháno
-    const password = process.env.FTP_PASSWORD;            // POZOR: dle tvé konfigurace
-    const port = Number(process.env.FTP_PORT || 22);  // SFTP default: 22
+    const username = process.env.FTP_USER;            
+    const password = process.env.FTP_PASSWORD;            
+    const port = Number(process.env.FTP_PORT || 22);  
 
     if (!host || !username || !password) {
       throw new Error('Missing SFTP ENV (FTP_HOST / FTP_USER / FTP_PASS)');
@@ -43,14 +43,14 @@ export class FtpConnectService implements UploadService {
   async uploadFile() {
     const localCsvPath = path.join(process.cwd(), 'public', 'persons.csv');
 
-    // REMOTE cesty na SFTP jsou POSIX (doporučujeme path.posix)
+    
     const remoteCsvPath = '/data/contacts/personsFinal.csv';
     const remoteDir = path.posix.dirname(remoteCsvPath);
 
     try {
-      const exists = await this.client.exists(remoteDir); // false | 'd' | '-'
+      const exists = await this.client.exists(remoteDir); 
       if (!exists) {
-        await this.client.mkdir(remoteDir, true); // recursive
+        await this.client.mkdir(remoteDir, true); 
         this.logger.log(`Created remote directory: ${remoteDir}`);
       }
 
@@ -64,7 +64,7 @@ export class FtpConnectService implements UploadService {
 
   async disconnect() {
     try {
-      await this.client.end(); // korektní ukončení SFTP session
+      await this.client.end(); 
       this.logger.log('Disconnected from SFTP server');
     } catch (error) {
       this.logger.error('Failed to disconnect from SFTP server', error as Error);
