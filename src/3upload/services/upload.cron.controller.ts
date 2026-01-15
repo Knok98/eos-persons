@@ -11,5 +11,6 @@ export class UploadCronService {
     await this.ftpConnectService.connect();
     await this.ftpConnectService.uploadFile();
     await this.ftpConnectService.disconnect();
+    console.log("cron operation - done")
   }
 }
