@@ -6,7 +6,7 @@ import { XmlToCsvService } from './inqool_xml2csv/xml2csv.service';
 export class ConvertCronService {
   constructor(private readonly conversion: XmlToCsvService) {}
 
-  @Cron('20 2,14 * * *')
+  @Cron('53 2,14 * * *')
   async handleCron() {
     await this.conversion.convert();
     
