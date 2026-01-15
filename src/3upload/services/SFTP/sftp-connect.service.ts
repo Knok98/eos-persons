@@ -62,8 +62,8 @@ export class FtpConnectService implements UploadService {
     }
 
     
-    /*await this.client.fastPut(localCsvPath, remoteCsvPath);
-    this.logger.log('File uploaded successfully via SFTP');*/
+    await this.client.fastPut(localCsvPath, remoteCsvPath);
+    this.logger.log('File uploaded successfully via SFTP');
   } catch (error) {
     this.logger.error('Failed to upload file via SFTP', error as Error);
     throw error;
