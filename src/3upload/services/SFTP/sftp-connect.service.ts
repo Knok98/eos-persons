@@ -40,27 +40,36 @@ export class FtpConnectService implements UploadService {
     }
   }
 
-  async uploadFile() {
-    const localCsvPath = path.join(process.cwd(), 'public', 'persons.csv');
+ async uploadFile() {
+  const localCsvPath = path.join(process.cwd(), 'public', 'persons.csv');
+
+  const remoteCsvPath = '/data/contacts/personsFinal.csv';
+  const remoteDir = path.posix.dirname(remoteCsvPath);
+
+  try {
+  
+    const dirExists = await this.client.exists(remoteDir);
+    if (!dirExists) {
+      await this.client.mkdir(remoteDir, true);
+      this.logger.log(`Created remote directory: ${remoteDir}`);
+    }
+
+
+    const fileExists = await this.client.exists(remoteCsvPath);
+    if (fileExists) {
+      await this.client.delete(remoteCsvPath);
+      this.logger.log(`Deleted old file: ${remoteCsvPath}`);
+    }
 
     
-    const remoteCsvPath = '/data/contacts/personsFinal.csv';
-    const remoteDir = path.posix.dirname(remoteCsvPath);
-
-    try {
-      const exists = await this.client.exists(remoteDir); 
-      if (!exists) {
-        await this.client.mkdir(remoteDir, true); 
-        this.logger.log(`Created remote directory: ${remoteDir}`);
-      }
-
-      await this.client.fastPut(localCsvPath, remoteCsvPath);
-      this.logger.log('File uploaded successfully via SFTP');
-    } catch (error) {
-      this.logger.error('Failed to upload file via SFTP', error as Error);
-      throw error;
-    }
+    await this.client.fastPut(localCsvPath, remoteCsvPath);
+    this.logger.log('File uploaded successfully via SFTP');
+  } catch (error) {
+    this.logger.error('Failed to upload file via SFTP', error as Error);
+    throw error;
   }
+}
+
 
   async disconnect() {
     try {
