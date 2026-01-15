@@ -11,5 +11,6 @@ export class FileDownloadCronService {
   @Cron('50 2,14 * * *')
   async handleCron() {
     await this.fileDownloadService.downloadFile();
+    console.log("cron operation - download done");
   }
 }
