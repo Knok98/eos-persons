@@ -9,6 +9,7 @@ export class ConvertCronService {
   @Cron('53 2,14 * * *')
   async handleCron() {
     await this.conversion.convert();
+    console.log("cron operation - convert done");
     
   }
 }
