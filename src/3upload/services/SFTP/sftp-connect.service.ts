@@ -49,6 +49,7 @@ export class FtpConnectService implements UploadService {
     const localCsvPath = path.join(process.cwd(), 'public', 'persons.csv');
     const remoteCsvPath = '/data/contacts/personsFinal.csv';
     const remoteDir = path.posix.dirname(remoteCsvPath);
+    this.logger.log(`remoteDir is: ${remoteDir}`);
 
     try {
       const dirExists = await this.client.exists(remoteDir);
