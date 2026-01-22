@@ -7,9 +7,7 @@ export class FtpConnectController {
 
   @Get('upload')
   async uploadFile() {
-    await this.uploadService.connect();
-    await this.uploadService.uploadFile();
-    await this.uploadService.disconnect();
+    await this.uploadService.runTask();
     return { message: 'File uploaded successfully' };
   }
 }
