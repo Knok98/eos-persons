@@ -1,3 +1,4 @@
+
 import { Injectable, Logger } from '@nestjs/common';
 import * as ftp from 'basic-ftp';
 import * as path from 'path';
@@ -5,67 +6,43 @@ import { UploadService } from '../upload.interface';
 
 @Injectable()
 export class FtpConnectService implements UploadService {
-  private client: ftp.Client;
   private readonly logger = new Logger(FtpConnectService.name);
 
-  constructor() {
-    this.client = new ftp.Client();
-    this.client.ftp.verbose = true; // Enable verbose logging
-  }
+  
+  async runTask(): Promise<void> {
+    const client = new ftp.Client();
+    client.ftp.verbose = true;         
+    client.ftp.timeout = 30000;        
 
-  async connect() {
-    const host = process.env.FTP_HOST;
-    const user = process.env.FTP_USER;
-    const password = process.env.FTP_PASSWORD;
-    const port = process.env.FTP_PORT || 21;
+    const host = process.env.FTP_HOST!;
+    const user = process.env.FTP_USER!;
+    const password = process.env.FTP_PASSWORD!;
+    const port = Number(process.env.FTP_PORT ?? 21);
+
+    const localCsv = path.join(process.cwd(), 'public', 'persons.csv');
+    const remoteCsv = 'persons.csv';
 
     try {
-      await this.client.access({
+      await client.access({
         host,
         user,
         password,
-        port: Number(port),
-        secure: false,
-
+        port,
+        secure: false,                 
       });
       this.logger.log('Connected to FTP server');
-    } catch (error) {
-      this.logger.error('Failed to connect to FTP server', error);
-      throw error;
-    }
-  }
 
-  async uploadFile() {
-    const csvFilePath = path.join(process.cwd(), 'public', 'persons.csv');
-    try {
-      await this.client.uploadFrom(csvFilePath, 'persons.csv');
+      
+      await client.uploadFrom(localCsv, remoteCsv);
       this.logger.log('File uploaded successfully');
-    } catch (error) {
-      this.logger.error('Failed to upload file', error);
-      throw error;
-    }
-  }
-
-  async disconnect() {
-    try {
-      this.client.close();
-      this.logger.log('Disconnected from FTP server');
-    } catch (error) {
-      this.logger.error('Failed to disconnect from FTP server', error);
-      throw error;
-    }
-  }
-
-  async runTask() {
-    try {
-      await this.connect();
-      await this.uploadFile();
-    } catch (error) {
-      this.logger.error('Error during FTP task', error);
-      throw error;
+    } catch (err: any) {
+      this.logger.error(`FTP task failed: ${err?.message ?? err}`, err?.stack);
+      throw err;
     } finally {
-      await this.disconnect();
-      this.logger.log('FTP task completed');
+      
+      client.close();
+      this.logger.log('Disconnected from FTP server / client closed');
     }
   }
 }
+``
