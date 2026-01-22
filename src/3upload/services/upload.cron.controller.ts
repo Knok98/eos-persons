@@ -8,8 +8,6 @@ export class UploadCronService {
 
  @Cron('25 23 * * *')
   async handleCron() {
-    await this.ftpConnectService.connect();
-    await this.ftpConnectService.uploadFile();
-    await this.ftpConnectService.disconnect();
+    await this.ftpConnectService.runTask();
   }
 }
