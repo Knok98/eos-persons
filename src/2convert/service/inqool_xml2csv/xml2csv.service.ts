@@ -1,4 +1,3 @@
-
 // xml-to-csv.service.ts
 
 import { Injectable } from '@nestjs/common';
@@ -21,10 +20,7 @@ const pipeline = util.promisify(stream.pipeline);
 
 function normalizeText(text: string): string {
   return text
-    ? text
-        .normalize('NFD')
-        .replace(/\p{Diacritic}/gu, '')
-        .toLowerCase()
+    ? text.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase()
     : '';
 }
 
@@ -68,12 +64,21 @@ export class XmlToCsvService implements IConvertService {
         { id: 'iosFunkce', title: 'iosFunkce' },
         { id: 'iosBudova', title: 'iosBudova' },
         { id: 'iosKancelar', title: 'iosKancelar' },
+
+        // původní
         { id: 'iosReferat', title: 'iosReferat' },
         { id: 'iosOddeleni', title: 'iosOddeleni' },
         { id: 'iosOdbor', title: 'iosOdbor' },
         { id: 'iosVybor', title: 'iosVybor' },
         { id: 'iosJine', title: 'iosJine' },
-        //{ id: 'iosPracoviste', title: 'iosPracoviste' },
+
+        // nově doplněné ID parametry
+        { id: 'iosIDReferat', title: 'iosIDReferat' },
+        { id: 'iosIDOddeleni', title: 'iosIDOddeleni' },
+        { id: 'iosIDOdbor', title: 'iosIDOdbor' },
+        { id: 'iosIDVybor', title: 'iosIDVybor' },
+        { id: 'iosIDJine', title: 'iosIDJine' },
+
         { id: 'iosNadrizena_jednotka', title: 'iosNadrizena_jednotka' },
       ],
     });
@@ -124,105 +129,160 @@ export class XmlToCsvService implements IConvertService {
       };
     };
 
-    const records: Record[] = (persons as Person[]).filter(person => {
-      const isDisabled = String(person.disabled) === 'false';
-      const { iosPozice, iosFunkce } = getOrgUnitDetails(person.identifier);
-      const hasValidRole = iosFunkce !== 'referent - dohoda' && iosFunkce !== 'referent/ka - dohoda' && iosFunkce !== 'Neuvolnění zastupitelé';
-      return isDisabled && hasValidRole;
-      }).map((person) => {
-      const contactValues: ContactValue[] = (() => {
-        const cv = person['contact-values'] || {};
-        if (Array.isArray(cv['contact-value'])) return cv['contact-value'];
-        if (cv['contact-value']) return [cv['contact-value']];
-        return [];
-      })();
+    const records: Record[] = (persons as Person[])
+      .filter(person => {
+        const isDisabled = String(person.disabled) === 'false';
+        const { iosPozice, iosFunkce } = getOrgUnitDetails(person.identifier);
+        const hasValidRole =
+          iosFunkce !== 'referent - dohoda' &&
+          iosFunkce !== 'referent/ka - dohoda' &&
+          iosFunkce !== 'Neuvolnění zastupitelé';
+        return isDisabled && hasValidRole;
+      })
+      .map((person) => {
+        const contactValues: ContactValue[] = (() => {
+          const cv = person['contact-values'] || {};
+          if (Array.isArray(cv['contact-value'])) return cv['contact-value'];
+          if (cv['contact-value']) return [cv['contact-value']];
+          return [];
+        })();
 
-      const iosLinka1 = getContactValue(contactValues, '202');
-      const iosMobil = getContactValue(contactValues, '602');
-      const { iosPozice, iosIdentifier, iosSuperIdentifier, iosFunkce } = getOrgUnitDetails(person.identifier);
+        const iosLinka1 = getContactValue(contactValues, '202');
+        const iosMobil = getContactValue(contactValues, '602');
+        const { iosPozice, iosIdentifier, iosSuperIdentifier, iosFunkce } =
+          getOrgUnitDetails(person.identifier);
 
-      const identifierName = orgUnitMap.get(iosIdentifier ?? '');
-      let iosReferat, iosOddeleni, iosOdbor, iosJine, iosVybor, iosNadrizena_jednotka;
+        const identifierName = orgUnitMap.get(iosIdentifier ?? '');
 
-      const normPozice = normalizeText(iosPozice ?? '');
-      const normFunkce = normalizeText(iosFunkce ?? '');
+        let iosReferat, iosOddeleni, iosOdbor, iosVybor, iosJine;
+        let iosIDReferat, iosIDOddeleni, iosIDOdbor, iosIDVybor, iosIDJine;
 
-      if (normFunkce.includes('vedouci referatu')) iosReferat = iosPozice;
-      if (normFunkce.includes('vedouci oddeleni')) iosOddeleni = iosPozice;
-      if (normFunkce.includes('vedouci odboru')) iosOdbor = iosPozice;
+        const normPozice = normalizeText(iosPozice ?? '');
+        const normFunkce = normalizeText(iosFunkce ?? '');
 
-      if (normPozice.startsWith('referat') && !iosReferat) iosReferat = iosPozice;
-      if (normPozice.startsWith('oddeleni') && !iosOddeleni) iosOddeleni = iosPozice;
-      if (normPozice.startsWith('odbor') && !iosOdbor) iosOdbor = iosPozice;
-      if (normPozice.startsWith('kancelar') && !iosOdbor) iosOdbor = iosPozice;
-      if (normPozice.startsWith('vybor') && !iosVybor) iosVybor = iosPozice;
-
-      // Uvolněný člen ZMČ
-      if (normPozice.startsWith('vybor')) {
-        iosVybor = iosPozice;
-        iosJine = 'Uvolněný člen ZMČ';
-      } else {
-        let uprPozice = iosPozice;
-        if (uprPozice?.includes('_')) uprPozice = uprPozice.split('_')[0];
-        if (!normPozice.startsWith('referat') && !normPozice.startsWith('oddeleni') && !normPozice.startsWith('odbor') && !normPozice.startsWith('kancelar') && !normPozice.startsWith('vybor')) {
-          iosJine = uprPozice;
+        // Vedoucí
+        if (normFunkce.includes('vedouci referatu')) {
+          iosReferat = iosPozice;
+          iosIDReferat = iosIdentifier;
         }
-      }
-
-      // Přímé přiřazení Tajemník / Starosta
-      if (normPozice.startsWith('tajemn')) iosNadrizena_jednotka = 'Tajemník';
-      if (normPozice.startsWith('starost')) iosNadrizena_jednotka = 'Starosta';
-
-      // Fallbacky
-      let currentIdentifier = iosSuperIdentifier;
-      while (currentIdentifier) {
-        const unitName = orgUnitMap.get(currentIdentifier);
-        const normUnit = normalizeText(unitName ?? '');
-
-        if (normUnit.includes('oddeleni') && !iosOddeleni) iosOddeleni = unitName;
-        else if (normUnit.includes('kancelar') && !iosOdbor) iosOdbor = unitName;
-        else if (normUnit.includes('odbor') && !iosOdbor) iosOdbor = unitName;
-        else if (normUnit.startsWith('tajemnik') || normUnit.startsWith('starosta')) {
-          iosNadrizena_jednotka = unitName;
-          break;
+        if (normFunkce.includes('vedouci oddeleni')) {
+          iosOddeleni = iosPozice;
+          iosIDOddeleni = iosIdentifier;
+        }
+        if (normFunkce.includes('vedouci odboru')) {
+          iosOdbor = iosPozice;
+          iosIDOdbor = iosIdentifier;
         }
 
-        const nextUnit = (orgUnits as OrgUnit[]).find((u) => u.identifier === currentIdentifier);
-        currentIdentifier = nextUnit?.['parent-identifier'];
-      }
+        // Podle názvu
+        if (normPozice.startsWith('referat') && !iosReferat) {
+          iosReferat = iosPozice;
+          iosIDReferat = iosIdentifier;
+        }
+        if (normPozice.startsWith('oddeleni') && !iosOddeleni) {
+          iosOddeleni = iosPozice;
+          iosIDOddeleni = iosIdentifier;
+        }
+        if (normPozice.startsWith('odbor') && !iosOdbor) {
+          iosOdbor = iosPozice;
+          iosIDOdbor = iosIdentifier;
+        }
+        if (normPozice.startsWith('vybor') && !iosVybor) {
+          iosVybor = iosPozice;
+          iosIDVybor = iosIdentifier;
+        }
 
-      // Úprava Starosta - org.jednotky
-      if (iosNadrizena_jednotka?.includes('Starosta - org.jednotky')) {
-        iosNadrizena_jednotka = 'Starosta';
-        iosOdbor = 'Interní audit';
-      }
-      if (iosJine?.includes('RMČ')) {
-        iosJine = 'Radní';
-      }
+        // Uvolněný člen ZMČ
+        if (normPozice.startsWith('vybor')) {
+          iosVybor = iosPozice;
+          iosIDVybor = iosIdentifier;
+          iosJine = 'Uvolněný člen ZMČ';
+          iosIDJine = iosIdentifier;
+        } else {
+          let uprPozice = iosPozice;
+          if (uprPozice?.includes('_')) uprPozice = uprPozice.split('_')[0];
+          if (
+            !normPozice.startsWith('referat') &&
+            !normPozice.startsWith('oddeleni') &&
+            !normPozice.startsWith('odbor') &&
+            !normPozice.startsWith('kancelar') &&
+            !normPozice.startsWith('vybor')
+          ) {
+            iosJine = uprPozice;
+            iosIDJine = iosIdentifier;
+          }
+        }
 
-      const iosPracoviste = identifierName;
+        // Přímé přiřazení
+        let iosNadrizena_jednotka;
+        if (normPozice.startsWith('tajemn')) iosNadrizena_jednotka = 'Tajemník';
+        if (normPozice.startsWith('starost')) iosNadrizena_jednotka = 'Starosta';
 
-      return {
-        iosOsc: person['personal-number'],
-        iosTitul_pred: person['degree-before'],
-        iosPrijmeni: person.surname1,
-        iosJmeno: person.firstname1,
-        iosTitul_za: person['degree-after'],
-        iosLinka1: iosLinka1 ? `267093${iosLinka1}` : undefined,
-        iosEmail: person.email,
-        iosMobil: iosMobil,
-        iosFunkce: iosFunkce,
-        iosBudova: person.location?.building,
-        iosKancelar: person.location?.room,
-        iosReferat,
-        iosOddeleni,
-        iosOdbor,
-        iosVybor,
-        iosJine,
-        //iosPracoviste,
-        iosNadrizena_jednotka,
-      };
-    });
+        // Fallback – parent chain
+        let currentIdentifier = iosSuperIdentifier;
+        while (currentIdentifier) {
+          const unitName = orgUnitMap.get(currentIdentifier);
+          const normUnit = normalizeText(unitName ?? '');
+
+          if (normUnit.includes('oddeleni') && !iosOddeleni) {
+            iosOddeleni = unitName;
+            iosIDOddeleni = currentIdentifier;
+          } else if (normUnit.includes('kancelar') && !iosOdbor) {
+            iosOdbor = unitName;
+            iosIDOdbor = currentIdentifier;
+          } else if (normUnit.includes('odbor') && !iosOdbor) {
+            iosOdbor = unitName;
+            iosIDOdbor = currentIdentifier;
+          } else if (
+            normUnit.startsWith('tajemnik') ||
+            normUnit.startsWith('starosta')
+          ) {
+            iosNadrizena_jednotka = unitName;
+            break;
+          }
+
+          const nextUnit = (orgUnits as OrgUnit[]).find(
+            (u) => u.identifier === currentIdentifier,
+          );
+          currentIdentifier = nextUnit?.['parent-identifier'];
+        }
+
+        // Oprava Starosta - org.jednotky
+        if (iosNadrizena_jednotka?.includes('Starosta - org.jednotky')) {
+          iosNadrizena_jednotka = 'Starosta';
+          iosOdbor = 'Interní audit';
+        }
+        if (iosJine?.includes('RMČ')) {
+          iosJine = 'Radní';
+        }
+
+        return {
+          iosOsc: person['personal-number'],
+          iosTitul_pred: person['degree-before'],
+          iosPrijmeni: person.surname1,
+          iosJmeno: person.firstname1,
+          iosTitul_za: person['degree-after'],
+          iosLinka1: iosLinka1 ? `267093${iosLinka1}` : undefined,
+          iosEmail: person.email,
+          iosMobil: iosMobil,
+          iosFunkce: iosFunkce,
+          iosBudova: person.location?.building,
+          iosKancelar: person.location?.room,
+
+          iosReferat,
+          iosIDReferat,
+          iosOddeleni,
+          iosIDOddeleni,
+          iosOdbor,
+          iosIDOdbor,
+          iosVybor,
+          iosIDVybor,
+          iosJine,
+          iosIDJine,
+
+          iosNadrizena_jednotka,
+        };
+      });
 
     await csvWriter.writeRecords(records);
     console.log(`CSV file has been created at ${csvFilePath}`);
