@@ -274,7 +274,7 @@ export class XmlToCsvService implements IConvertService {
           iosOddeleni,
           iosIDOddeleni,
           iosOdbor: iosOdbor ?? iosJine,
-          iosIDOdbor,
+          iosIDOdbor: iosIDOdbor?? iosIDJine,
           iosVybor,
           iosIDVybor,
           iosJine,
