@@ -26,6 +26,8 @@ export class FtpConnectService implements UploadService {
     }
 
     this.client = this.createClient();
+    this.client.on('debug', msg => this.logger.debug(msg))
+
 
     try {
       await this.client.connect({
