@@ -8,7 +8,7 @@ import { SambaService } from './smb/samba.service';
 export class FileDownloadCronService {
   constructor(private readonly fileDownloadService: SambaService) {}
 
-  @Cron('45 2,14 * * *')
+  @Cron('40 2,14 * * *')
   async handleCron() {
     await this.fileDownloadService.downloadFile();
     console.log("cron operation - download done");
