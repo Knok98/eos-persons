@@ -6,7 +6,7 @@ import { FtpConnectService } from './SFTP/sftp-connect.service';
 export class UploadCronService {
   constructor(private readonly ftpConnectService: FtpConnectService) {}
 
- @Cron('5 3,15 * * *')
+ @Cron('58 2,14 * * *')
   async handleCron() {
     await this.ftpConnectService.connect();
     await this.ftpConnectService.uploadFile();
